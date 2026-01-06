@@ -164,16 +164,9 @@ The script prints cumulative metrics after processing each image:
 4. **Similarity Matching**: Pixel-wise cosine similarity between visual and text features determines class assignments
 5. **Aggregation**: Overlapping patch predictions are averaged to produce final segmentation
 
-## 📝 Notes
-
-- The code automatically uses GPU if available, otherwise falls back to CPU
-- Memory management: CUDA cache is cleared between images to handle large datasets
-- The script processes all matching images recursively in the input directory
 
 ## 📄 Citation
 
 If you use this code, please cite the paper (https://bmva-archive.org.uk/bmvc/2025/assets/workshops/MVEO/Paper_9/paper.pdf).
 
-## 📜 License
 
-[Add your license information here]
