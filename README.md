@@ -172,7 +172,7 @@ The script prints cumulative metrics after processing each image:
 
 ## 📄 Citation
 
-If you use this code, please cite the paper (coming soon).
+If you use this code, please cite the paper (https://bmva-archive.org.uk/bmvc/2025/assets/workshops/MVEO/Paper_9/paper.pdf).
 
 ## 📜 License
 
