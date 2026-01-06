@@ -1,0 +1,90 @@
+text_queries:
+  - "Aerial photo of a street in the city"
+  - "Aerial photo of an asphalt in the city"
+  - "Aerial photo of a Artificial Surface in the city"
+  - "Aerial photo of a stone path in the city"
+  - "Aerial photo of a roadbed in the city"
+  - "Aerial photo of a building in the city"
+  - "Aerial photo of a roof in the city"
+  - "Aerial photo of dirts in the city"
+  - "Aerial photo of sand in the city"
+  - "Aerial photo of grass in the city"
+  - "Aerial photo of gravels in the city"
+  - "Aerial photo of a tree in the city"
+  - "Aerial photo of a forested area in the city"
+  - "Aerial photo of shrubs in the city"
+  - "Aerial photo of bushes in the city"
+  - "Aerial photo of a car in the city"
+  - "Aerial photo of a river in the city"
+  - "Aerial photo of a lake in the city"
+  - "Aerial photo of a pool in the city"
+
+class_mapping:
+  "0": "Artificial Surface"
+  "1": "Artificial Surface"
+  "2": "Artificial Surface"
+  "3": "Artificial Surface"
+  "4": "Artificial Surface"
+  "5": "Building"
+  "6": "Building"
+  "7": "Natural Surface"
+  "8": "Natural Surface"
+  "9": "Natural Surface"
+  "10": "Natural Surface"
+  "11": "Vegetation"
+  "12": "Vegetation"
+  "13": "Vegetation"
+  "14": "Vegetation"
+  "15": "Vehicle"
+  "16": "Water"
+  "17": "Water"
+  "18": "Water"
+
+category_to_index:
+  "Artificial Surface": 0
+  "Building": 1
+  "Natural Surface": 2
+  "Vegetation": 3
+  "Vehicle": 4
+  "Water": 5
+
+input:
+  dir: "/bigwork/nhgnps01/CSS_data_postdam/Potsdam5cm_T_crops_2"
+  target_image_name: "R_G_B_IR.png"
+
+model:
+  clip_model_name: "ViT-L/14"
+  clip_checkpoint: "/bigwork/nhgnps01/CSS_model_w/avg/7-averaged_ViT-L-14.pt"
+  sam_checkpoint: "/bigwork/nhgnps01/CSS_model_w/sam_vit_h_4b8939.pth"
+  img_size: 224
+  patch_size: 14
+  num_classes: 6
+
+attention:
+  num_initial_layers: 18
+  num_neighbor_attention_layers: 2
+  num_sam_attention_layers: 4
+  max_random_attn: 0.0
+  sam_param_sets:
+    - points_per_side: 4
+      pred_iou_thresh: 0.5
+      stability_score_thresh: 0.5
+      min_mask_region_area: 500
+    - points_per_side: 2
+      pred_iou_thresh: 0.6
+      stability_score_thresh: 0.6
+      min_mask_region_area: 500
+    - points_per_side: 2
+      pred_iou_thresh: 0.5
+      stability_score_thresh: 0.5
+      min_mask_region_area: 1000
+    - points_per_side: 2
+      pred_iou_thresh: 0.5
+      stability_score_thresh: 0.5
+      min_mask_region_area: 2000
+
+output:
+  base_dir: "/bigwork/nhgnps01/CCS_out/predict_label_5"
+  visualizations_subdir: "visualizations"
+
+

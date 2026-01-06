@@ -1,0 +1,16 @@
+torch
+torchvision
+open-clip-torch
+segment-anything
+numpy
+Pillow
+einops
+tqdm
+scikit-learn
+scipy
+matplotlib
+seaborn
+torchmetrics
+opencv-python
+pyyaml
+
